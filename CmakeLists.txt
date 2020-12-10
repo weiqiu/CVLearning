@@ -1,4 +1,7 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
+
+SET_PROPERTY(GLOBAL PROPERTY USE_FOLDERS ON)
+
 PROJECT(CVLearning)
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c++11")
@@ -16,6 +19,9 @@ SET(CVL_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src)
 
 include(cmake/install_include_files.cmake)
 
+SET(BUILD_SHARED_LIBS ON)
+SET(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/install CACHE STRING "install" FORCE)
+
 set(CMAKE_DEBUG_POSTFIX "d")
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${PROJECT_SOURCE_DIR}/build/bin)
@@ -28,3 +34,5 @@ set(LibS_OUT_DIR ${PROJECT_SOURCE_DIR}/build/lib)
 
 add_subdirectory(src)
 add_subdirectory(samples)
+
+include(cmake/init_prj_depend.cmake)
