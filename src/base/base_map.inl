@@ -1,24 +1,14 @@
 
-// template impl for image
+// template impl for BaseMap
 
 namespace cvl
 {
 
 	template<typename T>
-	Image<T>::Image() :m_width(0), m_height(0), m_depth(0) {};
-
-	//template<typename T>
-	//Image<T>::Image(const Image<T>& image)
-	//{
-	//	m_width = image.GetWidth();
-	//	m_height = image.GetHeight();
-	//	m_depth = image.GetDepth();
-
-	//	m_data = image.GetData();
-	//};
+	BaseMap<T>::BaseMap() :m_width(0), m_height(0), m_depth(0) {};
 
 	template<typename T>
-	Image<T>::Image(int width, int height, int depth, const std::vector<T>& data)
+	BaseMap<T>::BaseMap(int width, int height, int depth, const std::vector<T>& data)
 	{
 		m_width = width;
 		m_height = height;
@@ -28,7 +18,7 @@ namespace cvl
 	}
 
 	template<typename T>
-	bool Image<T>::Get(int row, int col, T& value)
+	bool BaseMap<T>::Get(int row, int col, T& value)
 	{
 		if (!LegalPos(row, col))
 			return false;
@@ -39,7 +29,7 @@ namespace cvl
 	}
 
 	template<typename T>
-	bool Image<T>::GetSlice(int row, int col, T* &value)
+	bool BaseMap<T>::GetSlice(int row, int col, T* &value)
 	{
 		if (!LegalPos(row, col))
 			return false;
@@ -52,7 +42,7 @@ namespace cvl
 	}
 
 	template<typename T>
-	bool Image<T>::Set(int row, int col, const T& value)
+	bool BaseMap<T>::Set(int row, int col, const T& value)
 	{
 		if (!LegalPos(row, col))
 			return false;
@@ -63,7 +53,7 @@ namespace cvl
 	}
 
 	template<typename T>
-	bool Image<T>::SetSlice(int row, int col, const T* value)
+	bool BaseMap<T>::SetSlice(int row, int col, const T* value)
 	{
 		if (!LegalPos(row, col))
 			return false;
@@ -76,7 +66,7 @@ namespace cvl
 	}
 
 	template<typename T>
-	bool Image<T>::LegalPos(int row, int col)
+	bool BaseMap<T>::LegalPos(int row, int col)
 	{
 		if (row < 0 || col < 0)
 			return false;

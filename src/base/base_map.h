@@ -1,18 +1,17 @@
-#ifndef SRC_IMAGE_CVL_IMAGE_H__
-#define SRC_IMAGE_CVL_IMAGE_H__
+#ifndef SRC_IMAGE_CVL_BASE_MAP_H__
+#define SRC_IMAGE_CVL_BASE_MAP_H__
 
 #include <vector>
 
 namespace cvl
 {
 	template<typename T>
-	class Image
+	class BaseMap
 	{
 	public:
-		Image();
-		//Image(const Image<T>& image);
-		Image(int width, int height, int depth, const std::vector<T>& data);
-		~Image() {};
+		BaseMap();
+		BaseMap(int width, int height, int depth, const std::vector<T>& data);
+		~BaseMap() {};
 
 		int GetWidth() { return m_width; };
 		int GetHeight() { return m_heigth; };
@@ -40,6 +39,6 @@ namespace cvl
 
 } // namespace cvl
 
-#include "image.inl"
+#include "base_map.inl"
 
-#endif //!SRC_IMAGE_CVL_IMAGE_H__
+#endif //!SRC_IMAGE_CVL_BASE_MAP_H__
