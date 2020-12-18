@@ -1,8 +1,7 @@
 
 #include <sgm/sgm_impl.h>
 
-cvl::Image<float> cvl::SgmImpl::Run(const Image<unsigned char>& leftImg, 
-	                                const Image<unsigned char>& rightImg)
+cvl::DepthMap cvl::SgmImpl::Run(const Image& leftImg, const Image& rightImg)
 {
 	return m_depthMap;
 }

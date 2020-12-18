@@ -1,7 +1,8 @@
 #ifndef SRC_SGM_CVL_SGM_IMPL_H__
 #define SRC_SGM_CVL_SGM_IMPL_H__
 
-#include <image/image.h>
+#include <base/image.h>
+#include <base/depth_map.h>
 
 namespace cvl
 {
@@ -9,11 +10,11 @@ namespace cvl
 	{
 	public:
 
-		Image<float> Run(const Image<unsigned char>& leftImg, const Image<unsigned char>& rightImg);
+		DepthMap Run(const Image& leftImg, const Image& rightImg);
 
 	private:
-		Image<int> m_dispMap;
-		Image<float> m_depthMap;
+		BaseMap<int> m_dispMap;
+		DepthMap m_depthMap;
 	};
 }
 

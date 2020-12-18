@@ -14,7 +14,7 @@ namespace cvl
 		~BaseMap() {};
 
 		int GetWidth() { return m_width; };
-		int GetHeight() { return m_heigth; };
+		int GetHeight() { return m_height; };
 		int GetDepth() { return m_depth; };
 
 		const std::vector<T>& GetData() { return m_data; };

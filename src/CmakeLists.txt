@@ -1,4 +1,8 @@
 
-find_package(OpenCV REQUIRED)
+# Common
+add_subdirectory(base)
+add_subdirectory(io)
 
+# Algorithm
+add_subdirectory(wrap)
 add_subdirectory(sgm)

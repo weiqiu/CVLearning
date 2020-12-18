@@ -23,7 +23,7 @@ namespace cvl
 		if (!LegalPos(row, col))
 			return false;
 
-		T = m_data[row * m_width * m_depth + col * m_depth];
+		value = m_data[row * m_width * m_depth + col * m_depth];
 
 		return true;
 	}
@@ -35,7 +35,7 @@ namespace cvl
 			return false;
 
 		for (int i = 0; i < m_depth; i++) {
-			T[i] = m_data[row * m_width * m_depth + col * m_depth + i];
+			value[i] = m_data[row * m_width * m_depth + col * m_depth + i];
 		}
 		
 		return true;
@@ -47,7 +47,7 @@ namespace cvl
 		if (!LegalPos(row, col))
 			return false;
 
-		m_data[row * m_width * m_depth + col * m_depth] = T;
+		m_data[row * m_width * m_depth + col * m_depth] = value;
 
 		return true;
 	}
@@ -59,7 +59,7 @@ namespace cvl
 			return false;
 
 		for (int i = 0; i < m_depth; i++) {
-			m_data[row * m_width * m_depth + col * m_depth + i] = T[i];
+			m_data[row * m_width * m_depth + col * m_depth + i] = value[i];
 		}
 
 		return true;
