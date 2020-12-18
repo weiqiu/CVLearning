@@ -1,4 +1,2 @@
 
-find_package(OpenCV REQUIRED)
-
 add_subdirectory(sgm_example)
