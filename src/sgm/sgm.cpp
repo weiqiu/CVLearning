@@ -2,8 +2,10 @@
 #include <sgm/sgm_impl.h>
 #include <sgm/sgm.h>
 
-cvl::DepthMap cvl::Sgm::Run(const Image& leftImg, const Image& rightImg)
+using namespace cvl;
+
+DepthMap alg::Sgm::Run(const Image& leftImg, const Image& rightImg)
 {
-	SgmImpl sgm;
+	iner::SgmImpl sgm;
 	return sgm.Run(leftImg, rightImg);	
 }

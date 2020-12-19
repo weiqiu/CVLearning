@@ -9,7 +9,7 @@ int main()
 	
 
 
-	cvl::DepthMap depthMap = cvl::Sgm::Run(leftImg, rightImg);
+	cvl::DepthMap depthMap = cvl::alg::Sgm::Run(leftImg, rightImg);
 	
 	return 0;
 }

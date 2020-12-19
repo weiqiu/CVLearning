@@ -1,2 +1,4 @@
 
+add_subdirectory(test_io)
 add_subdirectory(test_log)
+add_subdirectory(test_time)

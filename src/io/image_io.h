@@ -12,15 +12,19 @@
 
 namespace cvl
 {
-	class CVL_BASE_LIB_EXPORT ImageIO
+	namespace io
 	{
-	public:
 
-		static bool Load(const std::string& path, Image& img, bool color = true);
+		class CVL_BASE_LIB_EXPORT ImageIO
+		{
+		public:
 
-		static bool Save(const std::string& path, const Image& img);
-	};
+			static bool Load(const std::string& path, Image& img, bool color = true);
 
+			static bool Save(const std::string& path, const Image& img);
+		};
+
+	} //namespace io
 } // namespace cvl
 
 #ifndef CVL_IO_LIB_EXPORTS

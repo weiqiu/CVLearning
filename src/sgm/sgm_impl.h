@@ -6,16 +6,19 @@
 
 namespace cvl
 {
-	class SgmImpl
+	namespace iner
 	{
-	public:
+		class SgmImpl
+		{
+		public:
 
-		DepthMap Run(const Image& leftImg, const Image& rightImg);
+			DepthMap Run(const Image& leftImg, const Image& rightImg);
 
-	private:
-		BaseMap<int> m_dispMap;
-		DepthMap m_depthMap;
-	};
+		private:
+			BaseMap<int> m_dispMap;
+			DepthMap m_depthMap;
+		};
+	}
 }
 
 #endif //!SRC_SGM_CVL_SGM_IMPL_H__

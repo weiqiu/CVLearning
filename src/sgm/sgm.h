@@ -12,12 +12,15 @@
 
 namespace cvl
 {
-	class CVL_SGM_LIB_EXPORT Sgm
+	namespace alg
 	{
-	public:
+		class CVL_SGM_LIB_EXPORT Sgm
+		{
+		public:
 
-		static DepthMap Run(const Image& leftImg, const Image& rightImg);
-	};
+			static DepthMap Run(const Image& leftImg, const Image& rightImg);
+		};
+	}
 }
 
 #ifndef CVL_SGM_LIB_EXPORTS

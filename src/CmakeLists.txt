@@ -3,6 +3,7 @@
 add_subdirectory(base)
 add_subdirectory(io)
 add_subdirectory(log)
+add_subdirectory(time)
 
 # Algorithm
 add_subdirectory(wrap)

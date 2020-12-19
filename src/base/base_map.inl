@@ -42,12 +42,37 @@ namespace cvl
 	}
 
 	template<typename T>
+	bool BaseMap<T>::Get(int row, int col, T& value) const
+	{		
+		return Get(row, col, value);
+	}
+
+	template<typename T>
+	bool BaseMap<T>::GetSlice(int row, int col, T* &value) const 
+	{
+		return GetSlice(row, col, value);
+	}
+
+	template<typename T>
 	bool BaseMap<T>::Set(int row, int col, const T& value)
 	{
 		if (!LegalPos(row, col))
 			return false;
 
 		m_data[row * m_width * m_depth + col * m_depth] = value;
+
+		return true;
+	}
+
+	template<typename T>
+	bool BaseMap<T>::Set(int width, int height, int depth, const std::vector<T>& data)
+	{
+		m_width = width;
+		m_height = height;
+		m_depth = depth;
+		
+		m_data.clear();
+		m_data = data;
 
 		return true;
 	}
