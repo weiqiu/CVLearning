@@ -8,7 +8,7 @@
 #endif
 
 #include <base/image.h>
-#include <base/depth_map.h>
+#include <base/disparity_map.h>
 
 namespace cvl
 {
@@ -18,7 +18,7 @@ namespace cvl
 		{
 		public:
 
-			static DepthMap Run(const Image& leftImg, const Image& rightImg);
+			static DisparityMap Run(const Image& leftImg, const Image& rightImg);
 		};
 	}
 }

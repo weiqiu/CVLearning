@@ -4,8 +4,10 @@
 
 using namespace cvl;
 
-DepthMap alg::Sgm::Run(const Image& leftImg, const Image& rightImg)
+DisparityMap alg::Sgm::Run(const Image& leftImg, const Image& rightImg)
 {
-	iner::SgmImpl sgm;
-	return sgm.Run(leftImg, rightImg);	
+	iner::SgmImpl sgm(leftImg, rightImg);
+	sgm.SetDisparityRange(0, 255);
+	
+	return sgm.Run();	
 }

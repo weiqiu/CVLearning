@@ -18,14 +18,12 @@ namespace cvl
 	}
 
 	template<typename T>
-	bool BaseMap<T>::Get(int row, int col, T& value)
+	T BaseMap<T>::Get(int row, int col)
 	{
 		if (!LegalPos(row, col))
 			return false;
 
-		value = m_data[row * m_width * m_depth + col * m_depth];
-
-		return true;
+		return m_data[row * m_width * m_depth + col * m_depth];
 	}
 
 	template<typename T>
@@ -42,9 +40,9 @@ namespace cvl
 	}
 
 	template<typename T>
-	bool BaseMap<T>::Get(int row, int col, T& value) const
+	T BaseMap<T>::Get(int row, int col) const
 	{		
-		return Get(row, col, value);
+		return Get(row, col);
 	}
 
 	template<typename T>

@@ -16,7 +16,7 @@ bool io::ImageIO::Load(const std::string& path, Image& img, bool color)
 
 	cv::Mat cvImg = cv::imread(path, flag);
 	if (cvImg.empty()) {
-		cvl::Log(Log::LOG_ERROR) << "open image failed : " << path << cvl::Log::End();
+		cvl::Log(Log::LOG_ERROR) << "open image failed >> " << path << cvl::Log::End();
 		return false;
 	}
 
@@ -44,7 +44,7 @@ bool io::ImageIO::Save(const std::string& path, const Image& img)
 	}
 	else {
 		cvl::Log(Log::LOG_ERROR) << "save image failed" << path << cvl::Log::End();
-		cvl::Log(Log::LOG_ERROR) << "only support image channle(one or three) : " << imgDepth << cvl::Log::End();
+		cvl::Log(Log::LOG_ERROR) << "only support image channle(one or three) >> " << imgDepth << cvl::Log::End();
 		return false;
 	}
 

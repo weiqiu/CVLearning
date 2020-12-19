@@ -24,10 +24,10 @@ namespace cvl
 		const std::vector<T>& GetData() { return m_data; };
 		const std::vector<T>& GetData() const { return m_data; };
 
-		bool Get(int row, int col, T& value);
+		T Get(int row, int col);
 		bool GetSlice(int row, int col, T* &value);
 
-		bool Get(int row, int col, T& value) const;
+		T Get(int row, int col) const;
 		bool GetSlice(int row, int col, T* &value) const;
 
 		bool Set(int row, int col, const T& value);
@@ -37,7 +37,7 @@ namespace cvl
 	private:
 		bool LegalPos(int row, int col);
 
-	private:
+	protected:
 		int m_width;
 		int m_height;
 		int m_depth;
